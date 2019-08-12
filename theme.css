@@ -1,0 +1,541 @@
+/*
+  Theme: Warrior
+  Author: kurocraft0312
+  Author URL: https://twitter.com/kurocraft0312
+  Description:
+  シンプルな右2カラム構成で作られています。ちなみにテーマ名は、テーマを使う人が「初心を忘れず、ただただ愚直に書き続ける「戦士（＝書き人）」であらんことを」という願いのもと名付けました。
+  Responsive: yes
+*/
+
+/*
+<コンセプト>
+シンプルな右2カラムのテンプレート。速度重視のため、フラットデザインを採用。
+カスタムCSSでヘッダーの背景色やモジュールタイトルラベルの色を自由に変更可能。
+<機能>
+・レスポンシブ対応（iframeタグ・コマース・アドセンス広告は、レスポンシブ非対応）
+・SNSフォローボタン付きプロフィール搭載
+・記事内SNSボタン（シェア用）
+・はてなアイコンフォント搭載（※SNSフォローボタン付きプロフィールにのみ利用）
+・FontAwesome5 CDN搭載
+*/
+
+/********************************************
+common
+********************************************/
+html {
+    overflow: auto;
+}
+body {
+    overflow-x: hidden;
+}
+#content {
+    background-color: #f7f7f7;
+    margin-left: -500%;
+    margin-right: -500%;
+    padding-right: 500%;
+    padding-left: 500%;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    overflow: hidden;
+}
+.entry-content h1 {
+    padding: 8px 4px;
+}
+.entry-content h2 {
+    background-color: #f7f7f7;
+    border-left: 8px solid #21759B;
+    padding: 8px 4px;
+}
+.entry-content h3 {
+    border-bottom: 2px solid #21759B;
+    padding: 8px 4px;
+}
+.entry-content h3:before {
+    font-family: "Font Awesome 5 Free";
+    color: #21759B;
+    content: "\f00c";
+    padding-right: 4px;
+    font-weight: bold;
+}
+.entry-content h4 {
+    padding: 8px 4px;
+}
+.entry-content h4:before {
+    font-family: "Font Awesome 5 Free";
+    color: #21759B;
+    content: "\f00c";
+    padding-right: 4px;
+    font-weight: bold;
+}
+.entry-content h5 {
+    padding: 8px 4px;
+}
+.entry-content h6 {
+    padding: 8px 4px;
+}
+a {
+    text-decoration: none;
+}
+time {
+    color: #ffffff;
+}
+p {
+    word-break: break-all;
+}
+/*************************************************************************
+Top-page
+*************************************************************************/
+#top-editarea {
+    margin: 0;
+}
+/********************************************
+g-nav
+********************************************/
+/*メニュー幅を広げる*/
+#navi {
+    margin-left: -500%;
+    margin-right: -500%;
+    padding-right: 500%;
+    padding-left: 500%;
+    background-color: #21759B;
+}
+.g-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+.navbar {
+    display: block;
+    float: left;
+    width: 25%;
+    transition: 1.0s;
+}
+.navbar:hover {
+    background-color: #ffffff;
+    opacity: 0.8;
+}
+.navbar a {
+    color:#ffffff;
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+}
+.navbar a:hover {
+    color: #21759B;
+}
+/********************************************
+breadcrumb
+********************************************/
+div#top-box {
+    background-color: #f7f7f7;
+    margin-bottom: 0!important;
+    margin-left: -500%;
+    margin-right: -500%;
+    padding-right: 500%;
+    padding-left: 500%;
+    overflow: hidden;
+}
+.breadcrumb {
+    position: relative;
+    top: 30px;
+}
+/********************************************
+header
+********************************************/
+#blog-title {
+    text-align: center;
+    margin: 0;
+    margin-left: -500%;
+    margin-right: -500%;
+    padding-right: 500%;
+    padding-left: 500%;
+    overflow: hidden;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+#blog-description {
+    color: #333;
+    margin: 0;
+}
+#blog-description:before {
+    display: none;
+}
+@media(min-width: 992px) {
+    #title {
+        font-size: 2em;
+    }
+}
+/********************************************
+column
+********************************************/
+/*column(~768px:1column)(768px~:2column)*/
+@media (max-width:768px) {
+    #content-inner {
+        flex-direction: column!important;/*左カラムに対応させるため!importantを利用*/
+    }
+    /*main(デザイン調整)*/
+    #wrapper {
+        width: 100%;
+    }
+    /*sidebar（デザイン調整）*/
+    #box2 {
+        width: 100%;
+    }
+}
+/********************************************
+main
+********************************************/
+#main {
+    background-color: #ffffff;
+    margin-bottom: 3em;
+    padding: 20px;
+}
+.page-archive .archive-entry {
+    margin-bottom: 0;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 8px;
+}
+section.archive-entry {
+    transition: 1.0s;
+}
+section.archive-entry:hover {
+    background-color: #ffffff;
+    box-shadow: 0 0 32px;
+    opacity: 0.8;
+}
+.entry-header {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+.date.entry-date {
+    background-color: #42f486;
+    color: #ffffff;
+    display: inline-block;
+	font-weight: bold;
+    font-size: 16px;
+    padding: 4px;
+}
+.date a:hover {
+    text-decoration: none;
+}
+.entry-date:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f274";
+    padding-right: 4px;
+    font-weight: bold;
+}
+.categories {
+    margin-bottom: 1em;
+}
+.categories a {
+    background-color: #ECEEF1;
+    color: #333;
+    padding: 4px;
+}
+.page-archive .entry-thumb {
+    width: 120px;
+    height: 120px;
+}
+.entry-content .table-of-contents {    
+    background-color: #ECEEF1;
+    list-style-type: decimal;/*ulタグをolタグ風にナンバリングする*/
+}
+.entry-content .table-of-contents li {    
+    list-style-type: decimal;
+}
+.urllist-date-link {
+    background-color: #42f486;
+    display: table-cell;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 4px;
+}
+/********************************************
+sidebar
+********************************************/
+.hatena-module {
+    background-color: #ffffff;
+    padding: 20px;
+}
+.hatena-module-title {
+    background-color: #21759B;
+    color: #ffffff;
+    padding: 4px;
+    font-weight: bold;
+    text-align: center;
+}
+.hatena-module-title a {
+    color: #ffffff;
+}
+.hatena-module-title a:hover {
+    text-decoration: none;
+}
+.hatena-module-category .hatena-module-body ul.hatena-urllist li {
+    background-color: #ECEEF1;
+    color: #333;
+    display: inline-block;
+    margin: 4px;
+    padding: 4px;
+}
+.hatena-urllist li {
+    padding: 8px;
+    transition: 1.0s;
+}
+li.urllist-item.related-entries-item:hover {
+    background-color: #ffffff;
+    box-shadow: 0 0 32px;
+    opacity: 0.8;
+}
+li.urllist-item.recent-entries-item:hover {
+    background-color: #ffffff;
+    box-shadow: 0 0 32px;
+    opacity: 0.8;
+}
+.urllist-item-inner.recent-entries-item-inner {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 8px 0;
+}
+.hatena-urllist li a:hover {
+    text-decoration: none;
+}
+.hatena-urllist .urllist-category-link {
+    background-color: #ECEEF1;
+    color: #333;
+    padding: 4px;
+}
+/********************************************
+footer
+********************************************/
+#footer {
+    background-color: #21759B;
+    margin: 0;
+    width: 100%;
+}
+#footer-inner {
+    padding: 40px 0 0 0;
+}
+.hatena-module.hatena-module-related-entries {
+    padding: 0;
+}
+/*************************************************************************
+Archive-page
+*************************************************************************/
+.date.archive-date {
+    background-color: #42f486;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 4px;
+}
+.date.archive-date::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f274";
+    padding-right: 4px;
+    font-weight: bold;
+}
+/*************************************************************************
+Category-page
+*************************************************************************/
+
+/*************************************************************************
+Search-page
+*************************************************************************/
+.archive-heading {
+    margin-top: 0;
+}
+.archive-heading:before {
+    display: none;
+}
+/*************************************************************************
+カスタムHTML
+*************************************************************************/
+/********************************************
+SNSフォローボタン付きプロフィール（ここのアイコンフォントのみはてなから引っ張ってきています）
+********************************************/
+.hatena-custom-module-prof-box {
+    border-radius: 4px;
+    background-color: #ffffff;
+    margin-bottom: 3em;
+    padding: 20px;
+    text-align: center;
+}
+.hatena-custom-module-prof-box a {
+    color: #454545;
+    text-decoration: none;
+}
+.prof-name {
+    text-align: center;
+}
+.profile img {
+    display: block;
+    margin: 2% auto;
+}
+.prof-des {
+    text-align: center;
+}
+.follow-button {
+    margin: 0 2%;
+    width: 100%;
+}
+.follow-mark {
+    padding: 0;
+}
+.follow-bar {
+    display: inline-block;
+    list-style: none;
+}
+.follow-button a {
+    text-align: center;
+    text-decoration: none;
+    font-size: 3em;
+    margin: 0 .04em;
+    transition: 1.0s;
+}
+.follow-button a:hover {
+    opacity: 0.8;
+}
+.follow-button a.f-hatena .f-twitter .f-facebook .f-feedly {
+    font-size: 0.4em;
+}
+.follow-button a.f-hatena::before {
+    font-family: "blogicon";/*はてなブログのアイコンWebフォント*/
+    content: "\f000";
+    color: #808080;
+    padding-right: 10px;
+    font-weight: normal;
+}
+.follow-button a.f-twitter::before {
+    font-family: "blogicon";
+    content: "\f035";
+    color: #44aeea;
+    padding-right: 10px;
+    font-weight: normal;
+}
+.follow-button a.f-facebook::before {
+    font-family: "blogicon";
+    content: "\f036";
+    color: #6490cd;
+    padding-right: 10px;
+    font-weight: normal;
+}
+.follow-button a.f-feedly::before {
+    font-family: "blogicon";
+    content: "\f04e";
+    color: #85beab;
+    padding-right: 10px;
+    font-weight: normal;
+}
+/********************************************
+記事内SNSシェアボタン
+********************************************/
+/********************************************
+記事内SNSシェアボタン(共通)
+********************************************/
+.sns-area {
+    padding: 0;
+    text-align: center;
+}
+.sns-area a {
+    display: inline-block;
+    height: 40px;
+    width: 100%;
+    border-radius: 4px;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    margin: 0;
+    transition: 1.0s;
+}
+.custom-sns-button {
+    display: inline-flex;
+    list-style: none;
+    width: 19%;
+    margin: 0
+}
+.hatena-bookmark-button {
+    background-color: #00A4DE;
+    font-size: 23px;/*FontAwesome5で使うアイコンを基準とする場合、はてなフォントのfont-sizeは-1pxとする*/
+}
+.hatena-bookmark-button::before {
+    font-family: "blogicon";
+    content: "\f027";
+    color: #ffffff;
+    font-weight: normal;
+}
+.facebook-button {
+    background-color: #405BA7;
+    font-size: 23px;
+}
+.facebook-button::before {
+    font-family: "blogicon";
+    content: "\f036";
+    color: #ffffff;
+    font-weight: normal;
+}
+.twitter-button {
+    background-color: #55ACEE;
+    font-size: 23px;
+}
+.twitter-button::before {
+    font-family: "blogicon";
+    content: "\f035";
+    color: #ffffff;
+    font-weight: normal;
+}
+.googleplus-button {
+    background-color: #C53727;
+    font-size: 24px;
+}
+.googleplus-button::before {
+    font-family: "Font Awesome 5 Brands";/*ブランド名のアイコンを使う場合は、表記が「Font Awesome 5 Brands」になるので注意*/
+    content: "\f0d4";
+    color: #ffffff;
+    font-weight: normal;
+}
+.pocket-button {
+    background-color: #EE4256;
+    font-size: 24px;
+}
+.pocket-button::before {
+    font-family: "Font Awesome 5 Brands";
+    content: "\f265";
+    color: #ffffff;
+    font-weight: normal;
+}
+@media(max-width: 416px) {
+    .custom-sns-button {
+        width: 18%;
+    }
+}
+@media(max-width: 608px) {
+    .sns-area a {
+        width: 110px;
+    }
+}
+/********************************************
+記事内SNSシェアボタン(記事上)
+********************************************/
+.sns-share-button-top {
+    width: 100%;
+}
+.sns-share-button-top a:hover {
+    opacity: 0.8;
+}
+/********************************************
+記事内SNSシェアボタン(記事下)
+********************************************/
+.sns-share-button-bottom {
+    width: 100%;
+}
+.sns-share-button-bottom a:hover {
+    opacity: 0.8;
+}
+/********************************************
+iframeタグ
+********************************************/
+iframe {
+    width: 100%;
+}
